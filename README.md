@@ -3,18 +3,27 @@ wget https://dlcdn.apache.org/cassandra/4.0.12/apache-cassandra-4.0.12-bin.tar.g
 tar -xvf apache-cassandra-4.0.12-bin.tar.gz
 
 vi ~/.bashrc
+
 export CASSANDRA_HOME=/home/hadoop/apache-cassandra-4.0.12
+
 export PATH=$PATH:$CASSANDRA_HOME/bin
+
 :wq
+
 source ~/.bashrc
 
 //start cassanra server first (don't close this terminal)
+
 cassandra -f
+
 //to practice cassandra use this command open in another terminal (java 8 and python 2.7 required if ur using in windows)
+
 cqlsh (in another terminal)
 
 if u run cqlsh without start cassandra -f u ll get this error
+
 Connection error: ('Unable to connect to any servers', {'127.0.0.1': error(111, "Tried connecting to [('127.0.0.1', 9042)]. Last error: Connection refused")})
+
 [
 #if u get such error first start casssandra first using (cassandra -f ) next start cqlsh in another terminal
 #if u get cqlsh> in terminal cqssandra working fine
